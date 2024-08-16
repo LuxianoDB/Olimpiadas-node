@@ -6,7 +6,7 @@ const app = express();
 
 // Configurar middleware para sesiones
 app.use(session({
-    secret: 'tu_secreto_seguro', // Cambia esto por una cadena segura en producción
+    secret: 'asd8jklo09jhhk',
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false }

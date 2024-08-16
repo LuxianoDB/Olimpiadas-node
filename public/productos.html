@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <link rel="stylesheet" href="css/products.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <script defer src="js/productos.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
+</head>
+<body>
+    <header>
+        <nav class="Navegation">
+            <div class="Navegation-left">
+                <a href="/">Principal</a>
+                <a href="productos.html">Todos los Productos</a>
+            </div>
+            <div class="Navegation-right" id="DERECHA">
+                <script>
+                    fetch('/check-session')
+                    .then(response => response.json())
+                    .then(data => {
+                        const nav = document.getElementById('DERECHA');
+                        if (data.usuario === 'guest') {
+                            nav.innerHTML = '<a href="login.html">Iniciar sesión</a>';
+                        } else {
+                            nav.innerHTML = `<a href="carrito.html">Carrito</a><a href="/logout">Cerrar sesión (${data.usuario})</a>`;
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+                </script>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Lista de Productos</h1>
+        <ul id="productos-lista">
+            
+        </ul>
+    </main>
+</body>
+</html>

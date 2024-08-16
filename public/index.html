@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olimpiadas</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="Navegation">
+            <div class="Navegation-left">
+                <a href="/">Principal</a>
+                <a href="productos.html">Todos los Productos</a>
+            </div>
+            <div class="Navegation-right" id="DERECHA">
+                <script>
+                    fetch('/check-session')
+                    .then(response => response.json())
+                    .then(data => {
+                        const nav = document.getElementById('DERECHA');
+                        if (data.usuario === 'guest') {
+                            nav.innerHTML = '<a href="login.html">Iniciar sesión</a>';
+                        } else {
+                            nav.innerHTML = `<a href="carrito.html">Carrito</a><a href="/logout">Cerrar sesión (${data.usuario})</a>`;
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+                </script>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2 id="Titulo">Bienvenido a Olimpiadas</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="img/zapatillas.jpg" alt="Producto 1">
+                <div class="card-body">
+                    <h3 class="card-title">Nombre del Producto 1</h3>
+                    <p class="card-price">$100</p>
+                    <p class="card-description">Descripción del producto 1.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/zapatillas2.jpg" alt="Producto 2">
+                <div class="card-body">
+                    <h3 class="card-title">Nombre del Producto 2</h3>
+                    <p class="card-price">$150</p>
+                    <p class="card-description">Descripción del producto 2.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/zapatillas3.jpg" alt="Producto 3">
+                <div class="card-body">
+                    <h3 class="card-title">Nombre del Producto 3</h3>
+                    <p class="card-price">$200</p>
+                    <p class="card-description">Descripción del producto 3.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* Estilos para la lista de productos */
+#productos-lista {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno de la lista */
+}
+
+#productos-lista li {
+    border: 1px solid #ddd; /* Borde alrededor de cada producto */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio entre productos */
+    display: flex; /* Para alinear el contenido */
+    justify-content: space-between; /* Espacio entre el nombre y el botón */
+    align-items: center; /* Alinea verticalmente el contenido */
+}
+
+#productos-lista button {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+#productos-lista button:hover {
+    background-color: #45a049; /* Color de fondo al pasar el ratón */
+}
